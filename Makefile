@@ -21,6 +21,10 @@ metadata-create:
 metadata-update:
 	metaboss update uri --account ${TOKEN_MINT} --new-uri=https://raw.githubusercontent.com/uprockcom/token/main/metadata.json
 
+disable-auth:
+	#spl-token authorize ${TOKEN_MINT} mint --disable
+	spl-token authorize ${TOKEN_MINT} freeze --disable
+
 airdrop:
 	solana --url ${NETWORK} \
 	--keypair ${KEYPAIR_AUTH} \
